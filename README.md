@@ -1,4 +1,4 @@
-# Retcheck
+# Retcheck Bypass by -Diesoin-#2024
 Code:
 ```cpp
 void Retcheck(int Address, BYTE* sBYTE) //Shrapner-#2024 / -Diesoin-#2024 Retcheck
