@@ -19,11 +19,17 @@ This would be a way would use this Retcheck Bypass. First you need to define the
 
 Then after you had defined the getaddy, this would be lua_getfield (example, ):
 ```cpp
-void getfield(int L, int index, const char *k) {
- Retcheck((void*)getaddy(GETFIELD_ADDRESS), 0xEB); // lol memes
- lua_getfield(r_l, idx, f);
- Retcheck((void*)getaddy(GETFIELD_ADDRESS), 0x72); 
+void getfield(int L, int idx, const char *k) {
+ Retcheck((int*)getaddy(GETFIELD_ADDRESS), 0xEB); // lol memes
+ lua_getfield(L, idx, f);
+ Retcheck((int*)getaddy(GETFIELD_ADDRESS), 0x72); 
 }
+```
+
+If you know how to use this Retcheck, you would know that you would need an something like this to identify 'lua_getfield'
+```cpp
+	typedef void(__cdecl* getfield_def)(int L, int idx, const char *k);
+	getfield_def lua_getfield = (getfield_def)(GETFIELD_ADDRESS);
 ```
 
 Remember that this is based on Variable's Amazing Retcheck.
