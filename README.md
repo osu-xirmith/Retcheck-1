@@ -26,10 +26,6 @@ void getfield(int L, int idx, const char *k) {
 }
 ```
 
-If you know how to use this Retcheck, you would know that you would need an something like this to identify 'lua_getfield'
-```cpp
-	typedef void(__cdecl* getfield_def)(int L, int idx, const char *k);
-	getfield_def lua_getfield = (getfield_def)(GETFIELD_ADDRESS);
-```
+
 
 Remember that this is based on Variable's Amazing Retcheck.
