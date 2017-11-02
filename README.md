@@ -17,7 +17,7 @@
  #define getaddy(X) (X - 0x400000 + (int)GetModuleHandle(0))
  ```
  
- Then after you had defined the getaddy, this would be lua_getfield (example, ):
+ Then after you had defined the getaddy, this would be lua_getfield (example):
  ```cpp
  void getfield(int L, int idx, const char *k) {
   Retcheck((int*)getaddy(GETFIELD_ADDRESS), 0xEB); // lol memes
@@ -27,5 +27,4 @@
  ```
  
  
- 
- -Remember that this is based on Variable's Amazing Retcheck.
+Remember that this is based on Variable's Amazing Retcheck.
